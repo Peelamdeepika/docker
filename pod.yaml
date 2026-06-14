@@ -1,0 +1,9 @@
+apiVersion: v1
+kind: pod 
+metadata:
+ name: nginx  #pod name
+ namespace: expense  # in this name space it will add the pod
+spec:
+  containers:
+   - name: nginx
+     image: nginx 
