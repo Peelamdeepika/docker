@@ -17,14 +17,14 @@ spec:
 ---
 
 # from this pod we are sending the request
-Kind: Pod
+kind: Pod
 apiVersion: v1
 metadata:
  name: multi-containers
-spec:
  labels: 
    project: DevOps
    environment: dev
+spec:
  containers:
   - name: nginx
     image: nginx
