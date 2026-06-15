@@ -20,7 +20,7 @@ spec:
 kind: Pod
 apiVersion: v1
 metadata:
- name: multi-containers
+ name: backend
  labels: 
    project: DevOps
    environment: dev
