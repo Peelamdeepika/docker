@@ -1,0 +1,7 @@
+kind: configMap
+apiVersion: v1
+metada:
+ name: myconfig
+data:
+  father: "askok kumar"
+  mother: " anitha Peelam"

@@ -1,0 +1,11 @@
+kind: Pod
+apiVersion: v1
+metada: 
+ name: pod-config
+spec: 
+  containers:
+    - name: nginx
+      image: nginx
+      envFrom:
+        conifMapRef:
+          name: myconfig  
