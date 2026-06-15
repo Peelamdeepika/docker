@@ -12,7 +12,7 @@ spec:
  ports:
   - protocol: TCP
     port: 80 # service port
-    nodePort: 30007
+    nodePort: 30007  # if u want particular otherwise it will assign any other port
 
 ---
 
