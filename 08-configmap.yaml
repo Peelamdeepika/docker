@@ -1,6 +1,6 @@
 kind: configMap
 apiVersion: v1
-metada:
+metadata:
  name: myconfig
 data:
   father: "askok kumar"
