@@ -1,0 +1,31 @@
+kind: Service
+apiVersion: v1
+metadata:
+ name: nginx # Service name
+spec:
+ selector:   # base on this labels it will take req from there
+   project: DevOps
+   environment: dev
+ ports:
+  - protocol: TCP
+    port: 80 # service port
+    targetPort: 80  # port where u have to send request
+     
+
+
+
+---
+
+# from this pod we are sending the request
+Kind: Pod
+apiVersion: v1
+metadata:
+ name: multi-containers
+spec:
+ labels: 
+   project: DevOps
+   environment: dev
+ containers:
+  - name: nginx
+    image: nginx
+
