@@ -1,0 +1,13 @@
+kind: Pod
+aniVersion: v1
+metadata:
+ name: env
+spec:
+ containers:
+  - name: nginx
+    image: nginx
+    env:
+     - name: trainer
+       value: "Deepika Peelam"
+     - name: Course
+       value: DevOps  
