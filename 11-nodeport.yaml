@@ -10,6 +10,8 @@ spec:
    environment: dev
    demo: np
  ports:
+  - protocol: TCP
+    port: 80 # service port
     nodePort: 30007
 
 ---
