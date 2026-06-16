@@ -1,46 +1,44 @@
-kind: Deployment
 apiVersion: apps/v1
+kind: Deployment
 metadata:
- name: nginx
- # labels of deployment resource
- labels:
-  app: nginx
-  tier: frontend
-  purpose: deployment
-spec:
- replicaset: 3
- selector:
-  matchlabels:
+  name: nginx
+  # labels of deployment resource
+  labels:
     app: nginx
     tier: frontend
     purpose: deployment
-template:
-  metadata:
-    labels:   
+spec:
+  replicas: 3
+  selector:
+    matchLabels:
       app: nginx
       tier: frontend
       purpose: deployment
-  spec:
-    comtainers:
-      name: nginx
-      image: nginx 
-      ports:
-      - containerport: 80 
+  template:
+    metadata:
+      labels:
+        app: nginx
+        tier: frontend
+        purpose: deployment
+    spec:
+      containers:
+      - name: nginx
+        image: joindevops/deployment:2.0
+        ports:
+        - containerPort: 80
 ---
-
 kind: Service
 apiVersion: v1
 metadata:
   name: nginx
 spec:
   type: LoadBalancer
-  selector:  # labels are used as selectors
-   app: nginx
-   tier: frontend
-   purpose: deployment 
-ports:
- - protocol: TCP
-   port: 80 #  Load balancer related service port
-   targetPort: 80
-   nodePort: 30007
-       
+  selector: # labels are used as selectors
+    app: nginx
+    tier: frontend
+    purpose: deployment
+  ports:
+  - protocol: TCP
+    port: 80 #  load balancer related service port
+    targetPort: 80
+    nodePort: 30007
